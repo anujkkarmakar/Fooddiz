@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "946193479374",
+    "project_id": "fooddiz-d948d",
+    "storage_bucket": "fooddiz-d948d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946193479374:android:a3d0fbbc704a7d4ca1029f",
+        "android_client_info": {
+          "package_name": "com.example.fooddiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946193479374-0g4dghnsorr1c0slof06216at2dlqsvu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fooddiz",
+            "certificate_hash": "095b4ae0e9ca9f1a56603024c0a05e5d57fff3b4"
+          }
+        },
+        {
+          "client_id": "946193479374-gjsrvf21miguu76kqre0f3lgiutavg2h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY_nueeBjzYo4dqiKCXtU1_kQnu7d39M0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946193479374-gjsrvf21miguu76kqre0f3lgiutavg2h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
