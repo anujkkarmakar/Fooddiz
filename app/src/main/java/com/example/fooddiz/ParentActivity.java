@@ -3,6 +3,7 @@ package com.example.fooddiz;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,6 +36,9 @@ public class ParentActivity extends AppCompatActivity {
     private FirebaseUser firebaseUser;
     private AppCompatTextView login, signup;
 
+    final String PREFS_NAME = "MyPrefsFile";
+    boolean my_first_time = true;
+
     @Override
     public void onStart() {
         super.onStart();
@@ -52,6 +56,19 @@ public class ParentActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_parent);
+
+//        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+//
+//        if (settings.getBoolean("my_first_time", true)) {
+//            //the app is being launched for first time, do something
+//
+//            // first time task
+//            // have the onboarding activity for the user
+//            startActivity(new Intent(ParentActivity.this, OnBoardingActivity.class));
+//
+//            // record the fact that the app has been started at least once
+//            settings.edit().putBoolean("my_first_time", false).commit();
+//        }
 
         login = findViewById(R.id.login);
         signup = findViewById(R.id.signup);
