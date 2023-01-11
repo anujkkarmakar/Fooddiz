@@ -24,11 +24,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="31dp"
         android:layout_weight="1"
-        android:fontFamily="@font/moondance"
+        android:fontFamily="@font/niconneregular"
         android:text="@string/welcome"
         android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
