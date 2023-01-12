@@ -26,4 +26,7 @@
     <string name="desc_two">Fit, Party, In-general mode catering to different moodes to make the moment unforgettable</string>
     <string name="desc_three">Get quick delivery in busy schedules. Say goodbye to "Sir, where is your home?"</string>
     <string name="desc_fourth">The secret of success in life is to eat what you like and let the food fight it out inside</string>
+    <string name="skip">SKIP</string>
+    <string name="back">BACK</string>
+    <string name="next">NEXT</string>
 </resources>

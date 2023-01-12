@@ -60,8 +60,6 @@ public class ParentActivity extends AppCompatActivity {
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
         if (settings.getBoolean("my_first_time", true)) {
-            //the app is being launched for first time, do something
-
             // first time task
             // have the onboarding activity for the user
             startActivity(new Intent(ParentActivity.this, OnBoardingActivity.class));

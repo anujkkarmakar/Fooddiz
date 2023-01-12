@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -19,6 +20,7 @@ public class OnBoardingActivity extends AppCompatActivity {
     LinearLayout layout;
     AppCompatTextView next, back, skip;
     ViewPagerAdapter viewPagerAdapter;
+    AppCompatImageView appCompatImageView2, appCompatImageView;
     TextView[] dots;
 
     @Override
@@ -29,8 +31,10 @@ public class OnBoardingActivity extends AppCompatActivity {
         next = findViewById(R.id.next);
         back = findViewById(R.id.back);
         skip = findViewById(R.id.skip);
+        appCompatImageView = findViewById(R.id.appCompatImageView);
+        appCompatImageView2 = findViewById(R.id.appCompatImageView2);
 
-        back.setOnClickListener(new View.OnClickListener() {
+        appCompatImageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(getCurrentItem(0) > 0) {
@@ -39,7 +43,7 @@ public class OnBoardingActivity extends AppCompatActivity {
             }
         });
 
-        next.setOnClickListener(new View.OnClickListener() {
+        appCompatImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(getCurrentItem(0) < 3) {
