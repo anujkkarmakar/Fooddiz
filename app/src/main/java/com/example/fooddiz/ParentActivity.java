@@ -65,6 +65,7 @@ public class ParentActivity extends AppCompatActivity {
 
             // record the fact that the app has been started at least once
             settings.edit().putBoolean("my_first_time", false).apply();
+            finish();
         }
 
         login = findViewById(R.id.login);
