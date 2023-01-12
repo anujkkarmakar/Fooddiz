@@ -51,7 +51,6 @@ import java.util.Locale;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SignUpActivity extends AppCompatActivity {
-
     private AppCompatEditText name100, email100, password100;
     private AppCompatButton button100;
     private AppCompatTextView google, loginPage;

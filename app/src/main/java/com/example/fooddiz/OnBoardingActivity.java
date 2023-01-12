@@ -31,6 +31,7 @@ public class OnBoardingActivity extends AppCompatActivity {
         next = findViewById(R.id.next);
         back = findViewById(R.id.back);
         skip = findViewById(R.id.skip);
+        back.setVisibility(View.INVISIBLE);
         appCompatImageView = findViewById(R.id.appCompatImageView);
         appCompatImageView2 = findViewById(R.id.appCompatImageView2);
 
