@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".LoginActivity">
 
     <View
@@ -96,6 +96,7 @@
         android:layout_marginBottom="30dp"
         android:gravity="center"
         android:orientation="horizontal"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,6 +136,7 @@
         android:background="@drawable/round_border"
         android:gravity="center"
         android:orientation="horizontal"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

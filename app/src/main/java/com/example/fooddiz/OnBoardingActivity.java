@@ -76,8 +76,6 @@ public class OnBoardingActivity extends AppCompatActivity {
     }
 
     public void setUpIndicator(int position) {
-
-        //TODO: To increase the count to minimum 4 and maximum 5 based upon proper consultation with team
         dots = new TextView[4];
         layout.removeAllViews();
 

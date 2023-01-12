@@ -33,7 +33,6 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class ParentActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private FirebaseUser firebaseUser;
     private AppCompatTextView login, signup;
 
     final String PREFS_NAME = "MyPrefsFile";

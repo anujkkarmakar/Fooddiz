@@ -29,4 +29,7 @@
     <string name="skip">SKIP</string>
     <string name="back">BACK</string>
     <string name="next">NEXT</string>
+    <string name="sign_out">SIGN OUT</string>
+    <string name="hi">HI</string>
+    <string name="phone">Phone</string>
 </resources>

@@ -34,7 +34,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Locale;
 
-public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+// The google authentication has been removed from the current version as it has few bugs. It needs to be updated from time to time
+
+public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser firebaseUser;
     private AppCompatEditText email100, password100;
@@ -57,23 +59,23 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         google_sign_in_btn = findViewById(R.id.google_sign_in_btn);
         google = findViewById(R.id.google);
 
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                        .build();
-
-        googleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this, this)
-                        .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-                                .build();
-
-        //Implement the onClickListener methods
-        //1. google
-        google.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                googleLogIn();
-            }
-        });
+//        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//                .requestEmail()
+//                        .build();
+//
+//        googleApiClient = new GoogleApiClient.Builder(this)
+//                .enableAutoManage(this, this)
+//                        .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+//                                .build();
+//
+//        //Implement the onClickListener methods
+//        //1. google
+//        google.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                googleLogIn();
+//            }
+//        });
 
         textView6.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,57 +94,57 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     }
 
 
-    private void googleLogIn() {
-        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
-        startActivityForResult(signInIntent, RC_SIGN_IN);
-    }
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode == RC_SIGN_IN) {
-            assert data != null;
-            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-            handleSignInResult(result);
-        }
-    }
-
-    private void handleSignInResult(GoogleSignInResult result) {
-        Log.d(TAG, "handleSignInResult: " + result.isSuccess());
-
-        if(result.isSuccess()) {
-            GoogleSignInAccount acct =  result.getSignInAccount();
-            Toast.makeText(this, "You have successfully logged into your account using Google", Toast.LENGTH_SHORT).show();
-
-            //check if a new account needs to be created if their is no account with the given account details
-            assert acct != null;
-            String emailCheck = acct.getEmail();
-            String passCheck = "#default12345";
-
-            //if returned false, the user already has an account with the google credentials in our application
-
-            if(checkForUser(emailCheck, passCheck)) {
-                Toast.makeText(this, "New account created successfully", Toast.LENGTH_SHORT).show();
-            }
-
-            //changing the activity
-            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-            finish();
-        }
-    }
-
-    private boolean checkForUser(String email, String password) {
-        final boolean[] newUser = {false};
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                newUser[0] = true;
-            }
-        });
-        return newUser[0];
-    }
+//    private void googleLogIn() {
+//        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+//        startActivityForResult(signInIntent, RC_SIGN_IN);
+//    }
+//
+//
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        if(requestCode == RC_SIGN_IN) {
+//            assert data != null;
+//            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+//            handleSignInResult(result);
+//        }
+//    }
+//
+//    private void handleSignInResult(GoogleSignInResult result) {
+//        Log.d(TAG, "handleSignInResult: " + result.isSuccess());
+//
+//        if(result.isSuccess()) {
+//            GoogleSignInAccount acct =  result.getSignInAccount();
+//            Toast.makeText(this, "You have successfully logged into your account using Google", Toast.LENGTH_SHORT).show();
+//
+//            //check if a new account needs to be created if their is no account with the given account details
+//            assert acct != null;
+//            String emailCheck = acct.getEmail();
+//            String passCheck = "#default12345";
+//
+//            //if returned false, the user already has an account with the google credentials in our application
+//
+//            if(checkForUser(emailCheck, passCheck)) {
+//                Toast.makeText(this, "New account created successfully", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            //changing the activity
+//            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+//            finish();
+//        }
+//    }
+//
+//    private boolean checkForUser(String email, String password) {
+//        final boolean[] newUser = {false};
+//        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//            @Override
+//            public void onComplete(@NonNull Task<AuthResult> task) {
+//                newUser[0] = true;
+//            }
+//        });
+//        return newUser[0];
+//    }
 
     private void loginUser() {
         //now check if the user enters correct results with the firebase database
@@ -168,8 +170,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 });
     }
 
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Log.d(TAG, "onConnectionFailed: " + connectionResult.getErrorMessage());
-    }
+//    @Override
+//    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+//        Log.d(TAG, "onConnectionFailed: " + connectionResult.getErrorMessage());
+//    }
 }
