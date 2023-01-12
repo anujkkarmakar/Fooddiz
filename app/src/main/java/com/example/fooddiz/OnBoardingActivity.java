@@ -30,19 +30,6 @@ public class OnBoardingActivity extends AppCompatActivity {
         back = findViewById(R.id.back);
         skip = findViewById(R.id.skip);
 
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(getCurrentItem(0) < 1) {
-                    viewPager.setCurrentItem(getCurrentItem(1), true);
-                } else {
-                    //start the home activity
-                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                    finish();
-                }
-            }
-        });
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,10 +39,23 @@ public class OnBoardingActivity extends AppCompatActivity {
             }
         });
 
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(getCurrentItem(0) < 3) {
+                    viewPager.setCurrentItem(getCurrentItem(1), true);
+                } else {
+                    //start the home activity
+                    startActivity(new Intent(getApplicationContext(), ParentActivity.class));
+                    finish();
+                }
+            }
+        });
+
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                startActivity(new Intent(getApplicationContext(), ParentActivity.class));
                 finish();
             }
         });
@@ -66,12 +66,15 @@ public class OnBoardingActivity extends AppCompatActivity {
         viewPagerAdapter = new ViewPagerAdapter(this);
         viewPager.setAdapter(viewPagerAdapter);
 
+        setUpIndicator(0);
+        viewPager.addOnPageChangeListener(viewListener);
+
     }
 
     public void setUpIndicator(int position) {
 
         //TODO: To increase the count to minimum 4 and maximum 5 based upon proper consultation with team
-        dots = new TextView[2];
+        dots = new TextView[4];
         layout.removeAllViews();
 
         for(int i = 0; i < dots.length; i++) {
@@ -81,7 +84,7 @@ public class OnBoardingActivity extends AppCompatActivity {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 dots[i].setTextColor(getResources().getColor(R.color.black, getApplicationContext().getTheme()));
             }
-            layout.addView(dots[i]);;
+            layout.addView(dots[i]);
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

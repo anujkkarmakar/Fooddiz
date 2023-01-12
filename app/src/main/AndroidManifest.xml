@@ -43,6 +43,10 @@
         <activity
             android:name=".ParentActivity"
             android:exported="false" />
+        <activity
+            android:name=".OnBoardingActivity"
+            android:exported="false"
+            android:noHistory="true"/>
     </application>
 
 </manifest>

@@ -17,17 +17,23 @@ public class ViewPagerAdapter extends PagerAdapter {
 
     int[] images = {
             R.drawable.welcome,
-            R.drawable.peoples
+            R.drawable.peoples,
+            R.drawable.delivery,
+            R.drawable.marktwain
     };
 
     int[] descriptions = {
             R.string.desc_one,
-            R.string.desc_two
+            R.string.desc_two,
+            R.string.desc_three,
+            R.string.desc_fourth
     };
 
     int[] texts = {
             R.string.heading_one,
-            R.string.heading_two
+            R.string.heading_two,
+            R.string.heading_three,
+            R.string.heading_fourth
     };
 
     public ViewPagerAdapter(Context context) {

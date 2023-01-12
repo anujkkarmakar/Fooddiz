@@ -57,18 +57,18 @@ public class ParentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_parent);
 
-//        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-//
-//        if (settings.getBoolean("my_first_time", true)) {
-//            //the app is being launched for first time, do something
-//
-//            // first time task
-//            // have the onboarding activity for the user
-//            startActivity(new Intent(ParentActivity.this, OnBoardingActivity.class));
-//
-//            // record the fact that the app has been started at least once
-//            settings.edit().putBoolean("my_first_time", false).commit();
-//        }
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
+        if (settings.getBoolean("my_first_time", true)) {
+            //the app is being launched for first time, do something
+
+            // first time task
+            // have the onboarding activity for the user
+            startActivity(new Intent(ParentActivity.this, OnBoardingActivity.class));
+
+            // record the fact that the app has been started at least once
+            settings.edit().putBoolean("my_first_time", false).apply();
+        }
 
         login = findViewById(R.id.login);
         signup = findViewById(R.id.signup);

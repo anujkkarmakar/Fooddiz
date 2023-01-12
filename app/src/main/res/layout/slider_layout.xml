@@ -8,10 +8,10 @@
     app:flow_horizontalAlign="center">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:src="@drawable/welcome"
         android:id="@+id/sliderImage"
         android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_height="300dp"
+        android:src="@drawable/welcome" />
 
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -21,9 +21,9 @@
         android:layout_marginTop="50dp"
         android:gravity="center"
         android:text="@string/heading_one"
-        android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/sliderDescription"

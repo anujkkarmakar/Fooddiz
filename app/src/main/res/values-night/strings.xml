@@ -18,12 +18,12 @@
     //Headings
     <string name="heading_one">Welcome, OnBoard !</string>
     <string name="heading_two">Different modes for different occasions</string>
-    <string name="heading_three">Cashless Payment</string>
-    <string name="heading_fourth">Pay Anywhere</string>
+    <string name="heading_three">No more questions asked</string>
+    <string name="heading_fourth">Mark Twain\'s words</string>
 
     //Description
     <string name="desc_one">We are happy to have you here at Fooddiz. We can\'t wait for you order your first food</string>
     <string name="desc_two">Fit, Party, In-general mode catering to different moodes to make the moment unforgettable</string>
-    <string name="desc_three">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
-    <string name="desc_fourth">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
+    <string name="desc_three">Get quick delivery in busy schedules. Say goodbye to "Sir, where is your home?"</string>
+    <string name="desc_fourth">The secret of success in life is to eat what you like and let the food fight it out inside</string>
 </resources>
