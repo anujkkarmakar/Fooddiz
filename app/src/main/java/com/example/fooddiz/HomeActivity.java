@@ -1,8 +1,11 @@
 package com.example.fooddiz;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -36,7 +39,6 @@ public class HomeActivity extends AppCompatActivity {
     private FirebaseUser firebaseUser;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    private FirebaseStorage firestore = FirebaseStorage.getInstance();
     String userId;
     private AppCompatTextView email, phone, name;
     ProgressDialog progressDialog;
@@ -84,23 +86,36 @@ public class HomeActivity extends AppCompatActivity {
         progressDialog.show();
         DatabaseReference reference = firebaseDatabase.getReference().child("users").child(firebaseAuth.getUid());
 
-        reference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+//        reference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<DataSnapshot> task) {
+//                if(task.isSuccessful()) {
+//                    if(task.getResult().exists()) {
+//                        DataSnapshot dataSnapshot = task.getResult();
+//                        name.setText(String.valueOf(dataSnapshot.child("name").getValue()));
+//                        email.setText(String.valueOf(dataSnapshot.child("email").getValue()));
+//                        progressDialog.dismiss();
+//                    }else {
+//                        progressDialog.dismiss();
+//                        Toast.makeText(HomeActivity.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
+//                    }
+//                }else {
+//                    progressDialog.dismiss();
+//                    Toast.makeText(HomeActivity.this, "Could not retrieve data", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if(task.isSuccessful()) {
-                    if(task.getResult().exists()) {
-                        DataSnapshot dataSnapshot = task.getResult();
-                        name.setText(String.valueOf(dataSnapshot.child("name").getValue()));
-                        email.setText(String.valueOf(dataSnapshot.child("email").getValue()));
-                        progressDialog.dismiss();
-                    }else {
-                        progressDialog.dismiss();
-                        Toast.makeText(HomeActivity.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
-                    }
-                }else {
-                    progressDialog.dismiss();
-                    Toast.makeText(HomeActivity.this, "Could not retrieve data", Toast.LENGTH_SHORT).show();
-                }
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                name.setText(String.valueOf(snapshot.child("name").getValue()));
+                email.setText(String.valueOf(snapshot.child("email").getValue()));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
     }
