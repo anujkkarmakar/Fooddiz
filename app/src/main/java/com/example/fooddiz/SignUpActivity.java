@@ -263,7 +263,7 @@ public class SignUpActivity extends AppCompatActivity {
                                                                                 if (task.isSuccessful()) {
                                                                                     progressDialog.dismiss();
                                                                                     Toast.makeText(SignUpActivity.this, "Successfully created", Toast.LENGTH_SHORT).show();
-                                                                                    startActivity(new Intent(SignUpActivity.this, HomeActivity.class));
+                                                                                    startActivity(new Intent(SignUpActivity.this, MainActivity2.class));
                                                                                 } else {
                                                                                     progressDialog.dismiss();
                                                                                     Toast.makeText(SignUpActivity.this, "Error created profile", Toast.LENGTH_SHORT).show();
